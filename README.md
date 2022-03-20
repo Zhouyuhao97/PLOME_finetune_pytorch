@@ -1,7 +1,7 @@
 # PLOME_finetune_pytorch
 最近在学习PLOME:Pre-training with Misspelled Knowledge for Chinese Spelling Correction (ACL2021)，由于对tensorflow代码不熟悉，加上项目中的其他代码都是pytorch写的，因此尝试在pytorch中实现了论文的finetune部分。  
   
-请先运行change_model_tf2torch/tf2torch.py转换tensorflow权重，权重下载见[tensorflow代码](https://github.com/liushulinle/PLOME)。
+请先运行change_model_tf2torch/tf2torch.py转换tensorflow权重放置到datas\pretrained_plome下，权重下载见[tensorflow代码](https://github.com/liushulinle/PLOME)。
   
 然后运行main.py开始训练。
   
