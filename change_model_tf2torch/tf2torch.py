@@ -109,9 +109,9 @@ if __name__ == "__main__":
 			w = torch.Tensor(w)
 			bert.state_dict()[torch_layer_name].copy_(w)
 	# 其他原模型中没有的，随机初始化 pinyin linear weight(bias初始化为0)
-	randn_tensor = torch.normal(mean=0, std=torch.ones((430, 768))*0.02)
-	bert.state_dict()['pinyin_linear.weight'].copy_(randn_tensor)
-	zero_tensor = torch.zeros(430)
-	bert.state_dict()['pinyin_linear.bias'].copy_(zero_tensor)
+	# randn_tensor = torch.normal(mean=0, std=torch.ones((430, 768))*0.02)
+	# bert.state_dict()['pinyin_linear.weight'].copy_(randn_tensor)
+	# zero_tensor = torch.zeros(430)
+	# bert.state_dict()['pinyin_linear.bias'].copy_(zero_tensor)
 	# 参数更新完成，保存模型
 	torch.save(bert.state_dict(), './torch_model/pytorch_model.bin')
