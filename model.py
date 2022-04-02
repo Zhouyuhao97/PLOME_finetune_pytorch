@@ -107,7 +107,7 @@ class Bert_PLOME(nn.Module):
 		logits_pinyin = self.pinyin_linear(outputs)
 		prob_pinyin = self.log_softmax(logits_pinyin)
 		#fudion output
-		prob_fusion = torch.zeros(1, 1)
+		prob_fusion = torch.zeros(1, 1).to(device)
 		if not is_training:
 			prob_fusion = torch.matmul(self.softmax(logits_pinyin), torch.t(torch.FloatTensor(self.zi_py_matrix).to(device)))
 			prob_fusion = prob_fusion * self.softmax(logits_hanzi)
